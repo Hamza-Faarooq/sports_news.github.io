@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Daily Prophet · Argentina 3–3 France · FIFA World Cup Final 2022</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --gold:#C9A84C;--gold-light:#E8C96B;--gold-dim:#7A6030;--red:#8B1010;
+  --bg:#F5F0E8;--bg-alt:#EDE6D4;--bg-card:#FAF7F0;--bg-dark:#0D0D0D;
+  --ink:#0D0D0D;--text-body:#1A1208;--text-muted:#5A4F3A;
+  --border:#C8BAA0;--nav-bg:#0D0D0D;--score-bg:#0D0D0D;--score-text:#fff;
+  --award-bg:#EDE6D4;--toc-bg:#FAF7F0;--spot-bg:#FAF7F0;
+  --pen-bg:#EDE6D4;--stat-bg:#FAF7F0;--tl-bg:#0D0D0D;
+  --col-rule:#C8BAA0;--close-bg:#0D0D0D;
+}
+[data-theme="dark"]{
+  --bg:#111008;--bg-alt:#1A1710;--bg-card:#161410;--bg-dark:#0A0900;
+  --ink:#F0E8D4;--text-body:#D8CEB8;--text-muted:#8A7D60;
+  --border:#2E2A1E;--nav-bg:#0A0900;--score-bg:#0A0900;--score-text:#F0E8D4;
+  --award-bg:#1A1710;--toc-bg:#161410;--spot-bg:#161410;
+  --pen-bg:#1A1710;--stat-bg:#161410;--tl-bg:#0A0900;
+  --col-rule:#2E2A1E;--close-bg:#0A0900;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'EB Garamond',Georgia,serif;overflow-x:hidden;transition:background .35s,color .35s}
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;z-index:9999}
+nav{background:var(--nav-bg);display:flex;align-items:center;justify-content:space-between;padding:0 1.8rem;height:46px;position:sticky;top:0;z-index:900;border-bottom:2px solid var(--gold-dim);transition:background .35s;gap:1rem}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;letter-spacing:.04em;color:var(--gold);text-decoration:none;white-space:nowrap;flex-shrink:0}
+.nav-links{display:flex;gap:1.6rem;list-style:none;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;flex:1}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:#8A7D60;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-right{display:flex;align-items:center;gap:.9rem;flex-shrink:0}
+.nav-date{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.08em;color:#4A4030;text-transform:uppercase;white-space:nowrap}
+.theme-btn{background:none;border:1px solid var(--gold-dim);border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.28rem .7rem;font-family:'DM Sans',sans-serif;font-size:.64rem;letter-spacing:.08em;color:var(--gold);transition:all .25s;white-space:nowrap}
+.theme-btn:hover{background:rgba(201,168,76,.1);border-color:var(--gold)}
+.theme-btn .ticon{font-size:.82rem;transition:transform .4s}
+.theme-btn:hover .ticon{transform:rotate(25deg)}
+.masthead{background:var(--bg-card);border-bottom:4px double var(--border);text-align:center;padding:2.8rem 1rem 1.8rem;position:relative;overflow:hidden;transition:background .35s}
+.masthead::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(180,160,110,.07) 28px,rgba(180,160,110,.07) 29px);pointer-events:none}
+.mast-topbar{font-family:'DM Sans',sans-serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.32rem 0;display:inline-block;width:100%;margin-bottom:.6rem}
+.mast-title{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,9vw,6.2rem);font-weight:900;line-height:.88;color:var(--ink);letter-spacing:-.02em;transition:color .35s}
+.mast-title span{color:var(--gold)}
+.mast-orn{color:var(--gold);font-size:1.2rem;margin:.7rem 0 .35rem;letter-spacing:.5rem;display:block}
+.mast-sub{font-family:'EB Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-muted);margin:.2rem 0 .7rem;letter-spacing:.06em}
+.mast-rule{display:flex;align-items:center;gap:.8rem;justify-content:center;margin:.6rem auto}
+.mast-rule hr{flex:1;max-width:130px;border:none;border-top:1px solid var(--border)}
+.mast-rule .dia{color:var(--gold);font-size:.5rem}
+.mast-meta{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted)}
+.mast-badge{display:inline-block;background:var(--bg-alt);border:1px solid var(--border);padding:.2rem .9rem;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-top:.6rem}
+.spec-banner{background:var(--ink);color:var(--gold);text-align:center;padding:.8rem 1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,3vw,1.45rem);letter-spacing:.22em;border-bottom:1px solid var(--gold-dim);transition:background .35s}
+.score-banner{background:var(--score-bg);color:var(--score-text);display:grid;grid-template-columns:1fr auto 1fr;position:relative;overflow:hidden;transition:background .35s}
+.score-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(201,168,76,.1) 0%,transparent 65%);pointer-events:none}
+.score-team{padding:2rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.score-team.arg{align-items:flex-end;border-right:1px solid #1E1E1E}
+.score-team.fra{align-items:flex-start;border-left:1px solid #1E1E1E}
+.t-flag{font-size:3rem;line-height:1;margin-bottom:.3rem}
+.t-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:.06em;line-height:1}
+.t-name.arg{color:#8ABFE0}
+.t-name.fra{color:#7EB3EE}
+.t-scorers{font-family:'EB Garamond',serif;font-size:.88rem;color:#666;margin-top:.4rem;line-height:1.7}
+.score-team.arg .t-scorers{text-align:right}
+.score-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.8rem 2.5rem;gap:.28rem}
+.sc-label{font-family:'DM Sans',sans-serif;font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:#444}
+.sc-main{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.8rem,9vw,6.2rem);line-height:1;color:var(--score-text);letter-spacing:.04em;animation:srev .9s cubic-bezier(.34,1.56,.64,1) .3s both}
+.sc-main .dash{color:var(--gold)}
+.sc-pens{font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid var(--gold-dim);padding:.22rem .85rem;border-radius:2px}
+.sc-venue{font-family:'EB Garamond',serif;font-size:.77rem;color:#555;font-style:italic;margin-top:.12rem}
+@keyframes srev{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.awards-row{background:var(--award-bg);border-top:2px solid var(--border);border-bottom:2px solid var(--border);display:flex;justify-content:space-around;padding:1.2rem 2rem;flex-wrap:wrap;gap:1rem;transition:background .35s}
+.aw-item{text-align:center;flex:1;min-width:150px;position:relative}
+.aw-item+.aw-item::before{content:'';position:absolute;left:0;top:10%;bottom:10%;width:1px;background:var(--border)}
+.aw-icon{font-size:1.65rem;display:block;margin-bottom:.18rem}
+.aw-title{font-family:'DM Sans',sans-serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim)}
+.aw-name{font-family:'Playfair Display',serif;font-size:1.04rem;font-weight:700;color:var(--ink);margin-top:.08rem;transition:color .35s}
+.aw-ctry{font-family:'DM Sans',sans-serif;font-size:.67rem;color:var(--text-muted)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+.sec-head{display:flex;align-items:center;gap:1rem;margin:3rem 0 1.4rem}
+.sec-head hr{flex:1;border:none;border-top:1px solid var(--border)}
+.sec-lbl{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.hl-block{border-bottom:3px double var(--border);padding-bottom:2.2rem;margin-bottom:2.2rem}
+.hl-kick{font-family:'DM Sans',sans-serif;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.55rem;display:flex;align-items:center;gap:.4rem}
+.hl-kick::before{content:'';width:24px;height:2px;background:var(--red);display:inline-block}
+h1.hl{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.7rem);font-weight:900;line-height:1.03;color:var(--ink);margin-bottom:.9rem;letter-spacing:-.01em;transition:color .35s}
+.hl-deck{font-family:'EB Garamond',serif;font-size:1.26rem;font-style:italic;color:var(--text-muted);line-height:1.55;max-width:760px;border-left:3px solid var(--gold);padding-left:1.1rem;margin-bottom:1.1rem}
+.byline{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase;line-height:1.9}
+.byline strong{color:var(--ink);transition:color .35s}
+.rd-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:.7rem}
+.rd-meta span{font-family:'DM Sans',sans-serif;font-size:.67rem;letter-spacing:.08em;color:var(--text-muted);display:flex;align-items:center;gap:.3rem}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0}
+@media(max-width:700px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
+.stat-cell{background:var(--stat-bg);padding:1.3rem 1rem;text-align:center;transition:background .2s,color .35s}
+.stat-cell:hover{background:var(--bg-card)}
+.s-num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:var(--ink);line-height:1;transition:color .35s}
+.s-num em{color:var(--gold);font-style:normal}
+.s-dsc{font-family:'DM Sans',sans-serif;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:.3rem}
+.toc{background:var(--toc-bg);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem 1.8rem;margin:2rem 0;column-span:all;transition:background .35s}
+.toc-ttl{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
+.toc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.25rem 2.5rem}
+@media(max-width:500px){.toc ul{grid-template-columns:1fr}}
+.toc ul li a{font-family:'EB Garamond',serif;font-size:.97rem;color:var(--ink);text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dotted var(--border);padding-bottom:.18rem;transition:color .2s}
+.toc ul li a:hover{color:var(--gold-dim)}
+.toc-n{font-family:'DM Sans',sans-serif;font-size:.67rem;color:var(--text-muted)}
+.cols{column-count:3;column-gap:2.8rem;column-rule:1px solid var(--col-rule)}
+@media(max-width:900px){.cols{column-count:2}}
+@media(max-width:560px){.cols{column-count:1}}
+.ap{font-family:'EB Garamond',serif;font-size:1.06rem;line-height:1.78;color:var(--text-body);margin-bottom:1.15rem;text-align:justify;hyphens:auto;transition:color .35s}
+.ap.dc::first-letter{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;float:left;line-height:.72;margin:.1em .1em 0 0;color:var(--ink);padding:.05em .1em;background:var(--bg-alt);border-top:3px solid var(--gold);transition:color .35s,background .35s}
+.art-sh{column-span:all;display:flex;align-items:center;gap:1rem;margin:2.2rem 0 1.5rem}
+.art-sh hr{flex:1;border:none;border-top:1px solid var(--border)}
+.art-sh span{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.stars{column-span:all;text-align:center;color:var(--gold);letter-spacing:.5em;font-size:.85rem;margin:1.8rem 0;display:block}
+.pq{column-span:all;border-top:3px solid var(--ink);border-bottom:1px solid var(--border);padding:1.5rem 2rem;margin:2rem 0;text-align:center;transition:border-color .35s}
+.pq-t{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.4vw,1.9rem);font-weight:700;font-style:italic;color:var(--ink);line-height:1.3;transition:color .35s}
+.pq-c{display:block;font-family:'DM Sans',sans-serif;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:.6rem}
+.tl-sec{background:var(--tl-bg);color:white;padding:3rem 2rem;margin:3rem calc(-2rem);position:relative;overflow:hidden;transition:background .35s}
+.tl-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(201,168,76,.1) 0%,transparent 60%);pointer-events:none}
+.tl-ttl{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.12em;color:var(--gold);text-align:center;margin-bottom:2.2rem}
+.ev-grid{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.ev{display:flex;align-items:center;gap:.45rem;padding:.42rem .85rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:default;transition:transform .2s,box-shadow .2s}
+.ev:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.ev.arg{background:rgba(116,172,223,.14);border:1px solid rgba(116,172,223,.28);color:#8ABFE0}
+.ev.fra{background:rgba(91,143,212,.1);border:1px solid rgba(91,143,212,.25);color:#7EB3EE}
+.ev.neu{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:#C9A84C}
+.ev .ct{font-weight:700;font-size:.68rem;opacity:.7}
+.ev .ci{font-size:.88rem}
+.ev .cn{color:white;font-weight:500}
+.ev .cy{font-size:.63rem;opacity:.55}
+.pen-sec{background:var(--pen-bg);border:1px solid var(--border);padding:2.2rem;margin:2.5rem 0;transition:background .35s,border-color .35s}
+.pen-ttl{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;text-align:center;margin-bottom:1.6rem;color:var(--ink);transition:color .35s}
+.pen-grid{display:grid;grid-template-columns:1fr 110px 1fr;gap:.6rem 1rem;align-items:center;max-width:680px;margin:0 auto}
+.pk{display:flex;align-items:center;gap:.6rem;font-family:'EB Garamond',serif;font-size:1rem;color:var(--text-body);transition:color .35s}
+.pk.arg{justify-content:flex-end}
+.kd{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.92rem;font-weight:700}
+.kd.s{background:#14521E;color:#4CE87C}
+.kd.m{background:#5C1010;color:#E84C4C}
+.kd.w{background:#8B6914;color:#FFD84C}
+.ps{text-align:center;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.pf{grid-column:1/-1;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);letter-spacing:.1em;margin-top:.5rem}
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0}
+@media(max-width:640px){.sp-grid{grid-template-columns:1fr}}
+.sp-card{background:var(--spot-bg);border:1px solid var(--border);padding:1.8rem;position:relative;overflow:hidden;transition:background .35s,border-color .35s}
+.sp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.sp-card.arg::before{background:linear-gradient(90deg,#74ACDF,#4A8CC4)}
+.sp-card.fra::before{background:linear-gradient(90deg,#002395,#5B8FD4)}
+.sp-card.gold::before{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.sp-num{font-family:'Bebas Neue',sans-serif;font-size:6rem;line-height:1;position:absolute;top:0;right:1rem}
+.sp-card.arg .sp-num{color:rgba(116,172,223,.1)}
+.sp-card.fra .sp-num{color:rgba(0,35,149,.07)}
+.sp-tag{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.25rem}
+.sp-name{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:900;color:var(--ink);margin-bottom:.9rem;transition:color .35s}
+.sp-stats{display:flex;gap:1.8rem;flex-wrap:wrap;margin-bottom:1rem}
+.ss .ssn{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold)}
+.ss .ssl{font-family:'DM Sans',sans-serif;font-size:.53rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.sp-body{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:var(--text-body);transition:color .35s}
+.close-blk{text-align:center;padding:5rem 2rem;background:var(--close-bg);color:white;margin:3rem calc(-2rem) 0;position:relative;overflow:hidden;transition:background .35s}
+.close-blk::before{content:'❝';position:absolute;top:-2rem;left:50%;transform:translateX(-50%);font-size:18rem;color:rgba(201,168,76,.04);font-family:Georgia,serif;line-height:1;pointer-events:none}
+.close-txt{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:900;color:var(--gold-light);line-height:1.1;max-width:820px;margin:0 auto;position:relative}
+.close-sub{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#2E2A1E;margin-top:1.2rem}
+footer{background:var(--close-bg);color:#2E2A1E;text-align:center;padding:2.5rem;border-top:1px solid #1A1710;transition:background .35s}
+.f-logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--gold-dim);margin-bottom:.5rem}
+footer p{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.1em;line-height:2}
+.rule-dbl{border:none;border-top:3px double var(--border);margin:2.5rem 0}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.btt{position:fixed;bottom:2rem;right:2rem;z-index:800;width:42px;height:42px;background:var(--ink);border:1px solid var(--gold-dim);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;text-decoration:none}
+.btt.vis{opacity:1;pointer-events:auto}
+.btt:hover{transform:translateY(-3px)}
+@media(max-width:700px){.nav-links,.nav-date{display:none}.wrap{padding:0 1rem}.tl-sec,.close-blk{margin:3rem -1rem 0}.score-team{padding:1.5rem 1rem}.score-center{padding:1.5rem 1rem}.pen-grid{grid-template-columns:1fr 70px 1fr}}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<a class="btt" id="btt" href="#top">↑</a>
+
+<nav id="top">
+  <a class="nav-logo" href="#top">The Daily Prophet</a>
+  <ul class="nav-links">
+    <li><a href="#report">Report</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#firsthalf">First Half</a></li>
+    <li><a href="#comeback">Comeback</a></li>
+    <li><a href="#extratime">Extra Time</a></li>
+    <li><a href="#penalties">Shootout</a></li>
+    <li><a href="#aftermath">Aftermath</a></li>
+    <li><a href="#players">Players</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-date">19 Dec 2022</div>
+    <button class="theme-btn" id="themeBtn">
+      <span class="ticon" id="ticon">🌙</span>
+      <span id="tlbl">Dark</span>
+    </button>
+  </div>
+</nav>
+
+<div class="masthead reveal">
+  <div class="mast-topbar">Price €2.80 · Pages 40+4 · 19 December 2022 · Monday · Daily from London · Birmingham · Cardiff · Manchester · Southampton · Nottingham · Norfolk · Chester Le Street · Northampton</div>
+  <div class="mast-title">The Daily <span>Prophet</span></div>
+  <div class="mast-orn">✦ ✦ ✦</div>
+  <div class="mast-sub">Where Freedom Prevails Even in Darkness</div>
+  <div class="mast-rule"><hr/><span class="dia">◆</span><hr/></div>
+  <div class="mast-meta">Special World Cup Edition · Vol. CXLIV · Lusail Iconic Stadium, Doha · Qatar 2022</div>
+  <div class="mast-badge">Arabian Nights — FIFA World Cup 2022 @ Qatar · Final · Lusail Stadium, Doha</div>
+</div>
+
+<div class="spec-banner">★ &nbsp; Wizard Messi's Wondrous World &nbsp;—&nbsp; Special Coverage for The Daily Prophet &nbsp; ★</div>
+
+<div class="score-banner">
+  <div class="score-team arg">
+    <div class="t-flag">🇦🇷</div>
+    <div class="t-name arg">Argentina</div>
+    <div class="t-scorers">Messi 31' (pen.), 107'<br/>Di María 41'</div>
+  </div>
+  <div class="score-center">
+    <div class="sc-label">Full Time · After Extra Time</div>
+    <div class="sc-main">3<span class="dash"> – </span>3</div>
+    <div class="sc-pens">Argentina win 4 – 2 on Penalties</div>
+    <div class="sc-venue">Lusail Iconic Stadium, Doha · 18 December 2022</div>
+  </div>
+  <div class="score-team fra">
+    <div class="t-flag">🇫🇷</div>
+    <div class="t-name fra">France</div>
+    <div class="t-scorers">Mbappé 80' (pen.), 81', 118' (pen.)</div>
+  </div>
+</div>
+
+<div class="awards-row reveal">
+  <div class="aw-item"><span class="aw-icon">⚽</span><div class="aw-title">Golden Boot</div><div class="aw-name">Kylian Mbappé</div><div class="aw-ctry">🇫🇷 France · 8 Goals</div></div>
+  <div class="aw-item"><span class="aw-icon">🏅</span><div class="aw-title">Golden Ball</div><div class="aw-name">Lionel Messi</div><div class="aw-ctry">🇦🇷 Argentina</div></div>
+  <div class="aw-item"><span class="aw-icon">🧤</span><div class="aw-title">Golden Gloves</div><div class="aw-name">Emiliano Martínez</div><div class="aw-ctry">🇦🇷 Argentina</div></div>
+  <div class="aw-item"><span class="aw-icon">🌟</span><div class="aw-title">Emerging Player</div><div class="aw-name">Enzo Fernández</div><div class="aw-ctry">🇦🇷 Argentina</div></div>
+</div>
+
+<div class="wrap">
+
+  <div class="sec-head reveal"><hr/><span class="sec-lbl">✦ Match Report · FIFA World Cup Final · 18 December 2022</span><hr/></div>
+
+  <div class="hl-block reveal" id="report">
+    <div class="hl-kick">FIFA World Cup Final · Lusail Stadium, Doha</div>
+    <h1 class="hl">Synchronising Spectacle: At Lusail, The Eternal Quest Reaches Soothing Farewell</h1>
+    <div class="hl-deck">In perhaps the most pulsating World Cup final ever, Lionel Messi manoeuvres Argentina to Eternal glory in a six-goal showdown decided by Penalty Shootout after Kylian Mbappé's Hat-trick.</div>
+    <div class="byline">The Report by: <strong>Muhammad Hamza</strong>, at the Lusail Iconic Stadium, in Doha<br/>and <strong>Elizabeth Roland-Smith</strong> [Live Updates], in Doha — Chief Sports Writer and Football Correspondent</div>
+    <div class="rd-meta">
+      <span>🕐 18 min read</span>
+      <span>📍 Lusail Stadium, Qatar</span>
+      <span>📅 18 December 2022, 18:32 GMT</span>
+    </div>
+  </div>
+
+  <div class="stats-grid reveal">
+    <div class="stat-cell"><div class="s-num">6</div><div class="s-dsc">Goals in 120 Minutes</div></div>
+    <div class="stat-cell"><div class="s-num"><em>#</em>22</div><div class="s-dsc">World Cup Finals Played</div></div>
+    <div class="stat-cell"><div class="s-num">3</div><div class="s-dsc">Mbappé Hat-Trick Goals</div></div>
+    <div class="stat-cell"><div class="s-num">7</div><div class="s-dsc">Messi Goals in Tournament</div></div>
+    <div class="stat-cell"><div class="s-num">36</div><div class="s-dsc">Messi's Age at Triumph</div></div>
+  </div>
+
+  <div class="toc reveal">
+    <div class="toc-ttl">✦ Contents of This Report</div>
+    <ul>
+      <li><a href="#report">Opening — The Surreal Moment <span class="toc-n">I</span></a></li>
+      <li><a href="#timeline">Goal Timeline <span class="toc-n">II</span></a></li>
+      <li><a href="#firsthalf">The First Half — Argentina's Dominance <span class="toc-n">III</span></a></li>
+      <li><a href="#messi-pen">Messi's Penalty — 31st Minute <span class="toc-n">IV</span></a></li>
+      <li><a href="#dimaria">Di María's Goal — 41st Minute <span class="toc-n">V</span></a></li>
+      <li><a href="#comeback">Mbappé's Extraordinary Comeback <span class="toc-n">VI</span></a></li>
+      <li><a href="#extratime">Extra Time — The 107th Minute <span class="toc-n">VII</span></a></li>
+      <li><a href="#penalties">The Penalty Shootout <span class="toc-n">VIII</span></a></li>
+      <li><a href="#aftermath">Aftermath — Scenes at Lusail <span class="toc-n">IX</span></a></li>
+      <li><a href="#players">Player Spotlights <span class="toc-n">X</span></a></li>
+    </ul>
+  </div>
+
+  <!-- OPENING -->
+  <div class="cols reveal">
+    <p class="ap dc">Shortly after 8.30 PM, a godly delirium burst over in Qatar and unequivocally preceded by one of perhaps even greater and obscuring heights and inexplicable magnitudes, in Buenos Aires. It wasn't just an epithet of imaginative fervour, rather in twitchy circumspectial spectacle ever conjured in a Football match, it was a truly magnificent enigma of the fact vindicating the greatest show on Earth.</p>
+    <p class="ap">Leonel Messi is World Champion now. Get used to it, although for time too magnanimous and deceiving, notwithstanding for eons altogether, we endeavoured to say and think about it inspiringly. And finally when the time arrived, as we saw people bowling thin air, fans cursing their inevitable and the most desperately driven desires of their hearts, press box becoming suddenly an emotional warehouse, players feeling quintillions worth of pressure, some of them wiping their foreheads, finding solace in every penalty kick secured or saved, Hugo Lloris and Emiliano Martinez feeling the heat of a winter Qatari Bosch. And yet remarkably, it was a moment of utmost stealth, gargantuan of delight and sorrow. More, in essence, was yet to come.</p>
+    <p class="ap">The surreal moment arrived, draped in fully fleeting denouncement of cauldron lush with exhilaration upto its brim. After 12 years of jeopardised matchups, shredded schedules, a dystopian whirl and rendezvous of socio-political turmoil, ghosts of death, grief, suffering, bereavement and ignominious conflicts, lately surrounded by some personal agony, after 64 games in desert land of the Qatar World Cup, the drought of FIFA World Cup trophy was quenched finally, at the Lusail Stadium, in Qatar's Capital city, Doha.</p>
+    <p class="ap">To think this was, in essence, in even the finest vision of utopia, the greatest World Cup final ever, a long fulfilled euphoria erupted when the Argentinian men burst into a roar so loud, innocuous and yet superficially inevitable that it was absolutely impossible to even think of maligning it for something else.</p>
+    <p class="ap">And then there was this man, Lionel Messi, the man whose eyes sought the skies, a man whose last superhuman blood now having become a thing of utmost significance, benevolence and charismatic zenithally astute humdinger. As the final penalty was blasted past the diving, yet visibly broken French goalkeeper, Hugo Lloris, everyone had their own share of excitement, horror, amusement, visceral joy and if you were a French, then melancholy. Anything apart from joviality and hallowed smile was dwarfed by the look which prevailed on the facial features of one of Football's most celebrated and iconic performers.</p>
+    <p class="ap">Messi remained rooted to the spot which he had drowned for more than fifteen minutes since firing an almost unperturbed, nonchalantly slow yet steady shot into the down left corner as he took his side's first spot kick. When the final penalty kick, the fourth one which confirmed the crowning of Argentina as World's finest team, Messi sank onto his knees, the hands aloft, fingers pointing upwards into the skies, tears rolling down and finding it's way slowly and gradually onto the last hairs of his shiny beard. It never dawned how much that golden trophy meant to him.</p>
+    <span class="stars">★ ★ ★</span>
+    <p class="ap">Having squandered a giant opportunity of finding the fabled glory in his Footballing CV during the 2014 World Cup final against the mighty Germans at Rio de Janeiro's Maracanã Stadium. The wounds still ran amok, and Messi dwarfed them instantaneously the moment he set out onto the green field to adjudge his ethical greatness and weathering any vocal nadirs about him being an un-aficionado of the greatest sport and it's conjured show on Solar System's only life governing planet.</p>
+    <p class="ap">He had done all he could manage in the six games before the actual showdown, and at 35 years of age, the age had not taken to him as others. He had proved he was mortal, but never did the time caught on with him. Of course, time never leaves you in essence, and Messi had proven to be fallible at times, gullible at authentic occasions, but this time around, he had revealed without any furling, twirling trifles about having some unfinished business in his occupational treaty.</p>
+    <p class="ap">And yet at the end of all the wonderful which has carefully bechanced since the horrors of Group stage past, against Saudi Arabia — a match which they shockingly lost 1-2 — at this very stadium, during the inaugural match of their World Cup pursuits, it required a careful ejection of Messi's invincible penalty in the 21st minute, a piece of Messi magic: a subtle passing display which ultimately culminated in Angel Di Maria diving in to double their lead as France looked shocked and bewildered at Argentina's godly pace and extraordinarily exquisite preparedness to counter everything French monsieurs had to their graceful disposal. Needless to say, it wasn't Messi's only involvement of the night which undoubtedly was eased up to jewel his day, night and of course, the World Cup.</p>
+    <span class="stars">★ ★ ★</span>
+    <p class="ap">Argentina 3. France 3. At the end of the most gruelling and deafening 120 minutes highlighted by unshakeable pursuits of two fighting teams, the showdown reached a fitting farewell. It was now a terrifying and equally nerve-trenching conclusion to the finest World Cup final ever played.</p>
+    <p class="ap">We sat, in our seats, lost for words, seeping in the trepidation of a jostling and exhilarating Football match, yet nothing could prevent us to jump up and down like a maniac, everything out of mind, brains and heart falling numb. The perils of covering a going-to-the-wire game now fully and viscerally jettisoned. Yet the juxtaposition of another fairytale finish for either of the teams had reached a terrible and dementing territory. But we held on, just as billions had in their places and of the few thousands who were finding their voices and then occasionally devoid of any choice and voice when the moment needed time to sink in. It only proves the reality of us being humans.</p>
+    <p class="ap">How could you ever explain Lionel Scaloni walking in utter desperation, a sheet of manuscript in his hands, a pen whirring notes to think who could be the man to drive his saga of Disneyland dream? How else would you acknowledge Didier Deschamps frantically waving to Kola Muani, confirming he being one of the five spot-mans? And then, there was still the unfatigued Messi, walking the final World Cup dance of a celebrated career, now wanting to achieve its final topping of his dessert in a desert. Only time would tell the coronation of the lord.</p>
+    <p class="ap">With every passing minute, the emotions began to find better of everyone, even as the stark reality of defeat began to hover incandescently. Any fluorescence of someone lofting the fabled trophy now fading second by second, minute by minute. And yet, the legs stayed put and the eyes stayed focused. How ten minutes before the beginning of the penalty saga passed no one knows. No one would anticipate you to have a go either.</p>
+    <p class="ap">Out came Messi, ball in hand, eyes still focused, legs searching for glory. Now here was he, putting the ball in its adjudged place, peering in at the crowd, at the people who mattered, at the ball which did his unflappable bidding. Now he slowly drifted back to his stance, the left footer being the clear juncture of testimony, bar the final reversibility of thoughts. But vagueness was only accustomed to the ill-fated goalkeeper. In this case, it was Hugo Lloris.</p>
+    <p class="ap">Messi, having deceived Lloris all ends up with some paradoxical glares earlier, the record in his favour after bludgeoning the first goal of the game via a penalty, came down in response to the fourth time Kylian Mbappé found the back of the net, as the screen displayed 1-0 in penalties in France's favour. Messi walked calmly, took his stance, dodged the 'keeper for the umpteenth time while taking a penalty and then, as good as it can get, fired home a nonchalant tuck in the down left corner, at a pace slower than you cycle. And then, with the arms aloft, eyes bowing higher into the skies and at the supporters, he walked away to hand the ball to the French to follow.</p>
+  </div>
+
+  <div class="pq reveal">
+    <p class="pq-t">"Leonel Messi is World Champion now. Get used to it — although for time too magnanimous and deceiving, notwithstanding for eons altogether, we endeavoured to say and think about it inspiringly."</p>
+    <cite class="pq-c">— Muhammad Hamza, The Daily Prophet, Lusail Iconic Stadium, Doha</cite>
+  </div>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="tl-sec reveal">
+      <div class="tl-ttl">⚽ Match Timeline — 120 Minutes + Penalty Shootout</div>
+      <div class="ev-grid">
+        <div class="ev arg"><span class="ci">⚽</span><span class="ct">31'</span><span class="cn">Messi</span><span class="cy">(Penalty)</span></div>
+        <div class="ev arg"><span class="ci">⚽</span><span class="ct">41'</span><span class="cn">Di María</span></div>
+        <div class="ev neu"><span class="ci">🔄</span><span class="ct">44'</span><span class="cn">Giroud &amp; Dembélé off · Muani &amp; Thuram on</span></div>
+        <div class="ev fra"><span class="ci">⚽</span><span class="ct">80'</span><span class="cn">Mbappé</span><span class="cy">(Penalty)</span></div>
+        <div class="ev fra"><span class="ci">⚽</span><span class="ct">81'</span><span class="cn">Mbappé</span><span class="cy">(Volley)</span></div>
+        <div class="ev neu"><span class="ci">🟨</span><span class="ct">~105'</span><span class="cn">Messi</span><span class="cy">Yellow Card</span></div>
+        <div class="ev arg"><span class="ci">⚽</span><span class="ct">107'</span><span class="cn">Messi</span><span class="cy">(Rebound — 7th goal of tournament)</span></div>
+        <div class="ev neu"><span class="ci">🟥</span><span class="ct">~115'</span><span class="cn">Montiel handball → 3rd penalty of game</span></div>
+        <div class="ev fra"><span class="ci">⚽</span><span class="ct">118'</span><span class="cn">Mbappé</span><span class="cy">(Penalty — Hat-trick · 3–3)</span></div>
+        <div class="ev neu"><span class="ci">⏱</span><span class="ct">120'</span><span class="cn">End of Extra Time · 3–3 · Penalty Shootout</span></div>
+        <div class="ev arg"><span class="ci">✓</span><span class="cn">Messi scores</span><span class="cy">1–0</span></div>
+        <div class="ev fra"><span class="ci">✗</span><span class="cn">Coman saved (Martínez)</span><span class="cy">1–0</span></div>
+        <div class="ev arg"><span class="ci">✓</span><span class="cn">Dybala scores</span><span class="cy">2–0</span></div>
+        <div class="ev fra"><span class="ci">✗</span><span class="cn">Tchouaméni wide</span><span class="cy">2–0</span></div>
+        <div class="ev arg"><span class="ci">✓</span><span class="cn">Paredes scores</span><span class="cy">3–1</span></div>
+        <div class="ev fra"><span class="ci">✓</span><span class="cn">Kolo Muani scores</span><span class="cy">3–1</span></div>
+        <div class="ev arg"><span class="ci">🏆</span><span class="cn">Montiel scores — Argentina World Champions</span><span class="cy">4–2</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST HALF -->
+  <div class="sec-head reveal" id="firsthalf"><hr/><span class="sec-lbl">✦ The First Half — Argentina's Utter Dominance</span><hr/></div>
+
+  <div class="cols reveal">
+    <p class="ap dc">In all of the 22 World Cup finals romped till the Russian Ballet in 2018, never has more than one man scored a Final hat-trick. Forget that. The only man who did that ended up winning the final, bar the one who joined the former list in acrimonious fashion — Kylian Mbappé. Mbappé is a very eccentric, shrewd and understandably twitchy personality. He never gives you the aura or circumstantial and calming introspection Messi gives. And yet unknowingly enough, he holds way for his team aptly.</p>
+    <p class="ap">Of course, Mbappé's time in the World Cups have been one of sophisticated and unimaginably quintessential viscosity. Having ungrained a Young Players Award in Russia four years prior — not to count the five goals he fired home, two of which having come in the Quarterfinals clash against this time's eventual champions, Argentina — he went a step further, winning the Golden Boot this time, even as his team ended up as Runner Ups.</p>
+    <p class="ap">On Sunday, the Lusail was in tremendous warehouse of Footballing genius as two heavyweights in World Football were locking horns; one to achieve immortality of becoming only the third team ever to defend its title while the other walking the talk to win it for their legendary caretaker's sake.</p>
+    <p class="ap">For the first 80 minutes, the conditioning of the game was drawn out in clear cut Argentinian way. The Frenchmen had absolutely no idea what hit them the moment game began. It was highlighted by an unshakeable and unshattered man who was whisking away almost like a fluid. That he had been in an amazing form right from the outset indicated the task could only get easier from the get go.</p>
+    <p class="ap">In essence, Argentina were flabbergastingly outstanding. Such was their otherworldly dominance that French were downcast by the supreme ball play they were beholding. A terrific midfield, an invincible forward hailed the greatest of all time and a sharp defence made France look a timid lot. Having been struck down by a strange viral bug a few days before the game, it seemed obvious their mobility was overshadowed by the same bug. Argentina looked right on cue, although the French midfield of Antoine Griezmann, Adrien Rabiot and Muani looked short of ideas. The extent of damage was so unexaggerating that had the initial lineups not displayed on the screen, we would have wrongly deduced the inexistence of Kylian Mbappé.</p>
+    <p class="ap">For first 21 minutes, the scorecard had displayed an even contest, notwithstanding the original camera was elucidating a one-sided contest. The percentage possession highlighted a 90/10 statistic, while the number of shots displayed an even indifferent status. And it looked only a few more minutes until the goal was in.</p>
+    <span class="stars">★ ★ ★</span>
+    <div class="art-sh" id="messi-pen"><hr/><span>Minute by Minute Account — The Opening Hour</span><hr/></div>
+    <p class="ap">First two minutes go by without Messi touching the ball. Others seek to get an early touch, eager to impose themselves on the game and on the opposition. Julián Álvarez is charging everywhere, trying to unsettle the French defence, but Messi looks passive. He often does.</p>
+    <p class="ap">Then he comes to life: first a clever ball out to Ángel Di María on the left-hand side, which becomes a recurring problem for France, and then, when the cross is overhit, an exchange of passes with Rodrigo De Paul. A minute later the Argentina captain is caught from behind by Dayot Upamecano while contesting an aerial ball.</p>
+    <p class="ap">Suddenly Messi is involved in everything, helped by De Paul's tenacity in forcing the play on Argentina's right-hand side. Alexis Mac Allister, having tested Hugo Lloris from distance, looks up to be reminded that Messi was free five yards to his right. It is remarkable how often he is in space.</p>
+    <p class="ap">Argentina look so much more energetic all over the pitch. On eight minutes, receiving possession from Enzo Fernández, Messi plays a lovely ball through the middle for the excellent Mac Allister to run onto. That leads to a De Paul shot which is deflected wide.</p>
+    <p class="ap">Again and again, receiving the ball in the inside-right channel, Messi looks for that pass into space for Di María on the left wing. From one such move, Di María moves forward menacingly and Messi hangs back, ready to attack the ball when, as he anticipates, it will be cut back to the edge of the penalty area. Sure enough, that is where Di María delivers the ball, but Aurélien Tchouaméni makes the interception, at full stretch, just as Messi is preparing to connect.</p>
+    <p class="ap">As well as that dinked pass to Di María, Messi is looking to make little lay-offs when he receives the ball in tighter spaces with his back to goal, very much having fun like the child he had been when playing in the street in his hometown, Rosario.</p>
+    <p class="ap">One such lay-off, in the 17th minute, sends De Paul scurrying down the right-hand side and Messi goes off in search of the return pass. De Paul picks him out, but Messi overruns the ball. A let-off for France, but not for long.</p>
+    <p class="ap">Inside Lusail Stadium, you can sense the moment is coming for Argentina. Their attacks are in waves and France, the world champions, have no idea how to stem the tide.</p>
+    <p class="ap">On 21 minutes Di María moves in from the left-hand side, away from Ousmane Dembélé, and Messi, having initially hung back, darts towards the near post in the expectation of a cross. It doesn't come because Di María is tripped. Szymon Marciniak immediately points to the spot — a soft penalty, but a legitimate one.</p>
+    <p class="ap">And now it is Messi time. For the fifth time in this World Cup — the sixth if you include the shootout in the quarter-final against the Netherlands — he is about to take a penalty. He has missed just the one against Poland in the league stages but now on the greatest stage of them all, the room for error was astonishingly thin and acute.</p>
+    <p class="ap">Messi emerged, in the same simple and consequential manner, and almost as if it was a daily routine of getting a penalty in a World Cup final, came straight down and fired a terrific shot, putting Argentina in the lead. That improbable goal also put him ahead in the Golden Boot race, one ahead of Mbappé — six goals to Mbappé's five. Off went Messi sliding on the turf in front of the cameras, as his teammates engulfed him. Argentina are away, on course for creating history. France still hadn't got hold of the ball and their problems only reached zenith in their nadir of a game.</p>
+  </div>
+
+  <div class="pq reveal" id="dimaria">
+    <p class="pq-t">"Messi controlled the ball beautifully and played it spectacularly with a perfect amount of backspin to Álvarez — Di María swept it home, leaving Messi and Argentina in dream wonderland."</p>
+    <cite class="pq-c">— Match Report, The Daily Prophet</cite>
+  </div>
+
+  <div class="cols reveal">
+    <p class="ap dc">Messi, keeping up with a superhuman effort first against the Netherlands in Quarter Finals and then with that assist against Croatia, now put up with the ethics and natural evaluation of the final. Having won a kick from his goalkeeper — the only time the French entered their opposite goal's box in the first half — he drove it past the middle of the pitch, two defenders in his wake. But Messi is Messi. He controlled the ball beautifully and played it spectacularly with a perfect amount of backspin to Álvarez, who released it to Mac Allister with a brilliantly weighed pass. The timing of Mac Allister's pass was simultaneously matched by Di María on the left flank, who swept the ball home, leaving Messi and the rest of Argentina in dream wonderland.</p>
+    <p class="ap">Suddenly, Argentina looked on course for World Cup glory, with France far from their supremacy. At this point, the procession had begun to turn into coronation. Halftime came and had gone without any real improvement in France's stunning abysmal performance.</p>
+    <p class="ap">Olivier Giroud, and Ousmane Dembélé, who both had hardly put foot on ball in the first half, were substituted out in the 44th minute, as Deschamps looked short of ideas. His first two substitutes were inside in the first half itself — Randal Kolo Muani and Marcus Thuram — as pressure mounted. Now with each passing minute in the next half, it had now began to turn insurmountable.</p>
+    <p class="ap">But then the tides never remain a sulky constant in the toughest affair conjured. From a contrasting triumphant alchemy of Messi to a near-legendary and at times gruesome manifestation of team effort from Di María, Argentina were the favourites 45 minutes out from the ending of the most envisioning match in this World Cup. Qatar has sailed in its unabandoned beauty for most of the tournament amidst some failed and pathetic controversies needlessly invigorated by the Western media. Yet, their sophisticated organisation of perhaps the best World Cup ever conducted lives in its own varying zenith and dynamic spectacle.</p>
+  </div>
+
+  <!-- COMEBACK -->
+  <div class="sec-head reveal" id="comeback"><hr/><span class="sec-lbl">✦ The Second Half — Mbappé's Extraordinary Comeback</span><hr/></div>
+
+  <div class="cols reveal">
+    <p class="ap dc">For all that time, the 2-0 lead looked like smooth sailing; Argentina should have known it would not work like that. In the space of two minutes late in the second half, France wiped out Argentina's advantage, all of its painstaking work crumbling in the blink of an eye: another penalty, this one converted by Mbappé in the 80th minute, followed almost immediately by a fierce volley, again by Mbappé.</p>
+    <p class="ap">It had been a long time coming as France looked set to bow out without showing even a tiny glimpse of fight and paradoxical remittance. Not least until the 80th minute, the twilight seemed to have approached in satirical quotations. But Mbappé lived on.</p>
+    <p class="ap">The only time throughout the game when France looked for a counterattacking intuition drew almost instant dividend, when a penalty was rewarded courtesy a hard foul inside the box. The same man, who had missed the final penalty in the Euro 2020 Quarterfinals against Switzerland — when Switzerland led 5-4 with France a kick away to tie even the penalty shootouts — was given the penalty now that Griezmann and Giroud, their penalty specialists, were both on the bench. Mbappé, however, didn't disappoint at all, as a fierce shot somehow resisted the gloves of a diving Martínez, with France decreasing the deficit to one.</p>
+    <p class="ap">Away sprinted the French towards the centre mark as only ten minutes remained in the regulation time. It was their time of resurgence and rejuvenation. Mbappé was way good at it now that an opening had appeared out of nowhere.</p>
+    <span class="stars">★ ★ ★</span>
+    <p class="ap">And within the first minute post the penalty, Argentina found themselves in a tangle as a terrific pass from just outside the box to Mbappé at left flank left them wanting. Mbappé on the first bounce fired in a terrific half-volley past the compelled Martínez to find the back of the net.</p>
+    <p class="ap">Argentina's players slumped, the breath drawn out of their lungs. They had been so close. In an instant it was 2-2; they were as far as ever. A short breath from Messi convened him looking dismayed, shoulders sagging, arms now on his waist, eyes looking up towards the screen which now, amidst raucous applause from the French crowd, displayed an action replay of the terrific goal from Mbappé which robbed him of his hard work and resilience of more than eighty minutes.</p>
+    <p class="ap">France smelled blood; Argentina could do nothing but hang on for extra time. The Mbappé goal swelled France's momentum emphatically and knowing how he can crack open his world, Messi waited for the match to resume and to ensure he this time, doesn't lose control of the ball like a mortal — like the one he had lost which culminated in 20 seconds in Mbappé's second goal.</p>
+    <p class="ap">The closing swansong of the legend was tremendously chaotic and absurdly defiant, with both the sides going for it all. Mbappé threatens at one end, Messi at the other. Messi came closer to scoring a goal in the final minutes, when a powerful aerial shot from just inside the box was averted over the goal by a full-stretched diving Lloris. It had a goal written on it, but at the end, only a Lloris brilliance could waive out France. In essence, it gave us the naivety of sporting excellence with the tide now resting in terrific balance even as the battle between them — which had been bragged for a week — now reached an insurmountable height and magnitude.</p>
+    <p class="ap">Just as the Quarterfinals against the Netherlands, Argentina had endlessly squandered a 2-nil advantage in a jiffy and that match had gone way beyond extra thirty minutes and then were decided by Penalty Shootout. Now the rest of the ten minutes of regulation time now done and dusted, the next thirty minutes were now a largely inevitable phenomenon.</p>
+  </div>
+
+  <div class="pq reveal">
+    <p class="pq-t">"In all of the 22 World Cup finals, never has more than one man scored a Final hat-trick. The only man who did that ended up winning. Kylian Mbappé joined the list — but tonight, unlike Geoff Hurst's case in 1966, it wasn't going to be enough."</p>
+    <cite class="pq-c">— Muhammad Hamza, The Daily Prophet</cite>
+  </div>
+
+  <!-- EXTRA TIME -->
+  <div class="sec-head reveal" id="extratime"><hr/><span class="sec-lbl">✦ Extra Time — Messi's Seventh Goal &amp; Mbappé's Hat-Trick</span><hr/></div>
+
+  <div class="cols reveal">
+    <p class="ap dc">Now that he has run more than three miles, and appearing enormously exhausted, Messi still knew he had to be there till the end for the Cup. The defatiguable man as he has been since that Saudi debacle, Messi kept him in even as the age seemed to do him in. But Messi, after all isn't a common man. He is a legend, a connoisseur of the sport he adores and he isn't after all that lost. Not now.</p>
+    <p class="ap">Having suffered countless stinging losses for more than 15 years, notably the Extra time FIFA World Cup loss against Germany in 2014 final, 3-0 loss against Croatia in the 2018 World Cup, a large number of exasperating losses in the Champions League, the La Liga, he now couldn't afford for the world to collapse again. At least not today lest if it could then any day else. Although, Messi now isn't that quiet, nervous fellow like he was in the last two World Cups. He dares to implore, shout, fight, arrest the opposition with his guile and tongue. He was forever snarling in the previous few games, getting in a few ugly spats with Netherlands striker Weghorst and also engaging in numerous fights against the other Dutchmen on that same day. Today, he was as same and fluent as any.</p>
+    <p class="ap">His frustration now got better of him, when he got himself a yellow card after a needless tackle on Eduardo Camavinga, as he gained the ball from Messi. Surely, anything below a yellow card would have been a tragedy. But he looked spent, and he needed to channel his inner Maradona for one more time, for a few minutes as he has done all World Cup.</p>
+    <p class="ap">So Messi roused himself again, driving the ball home in the 108th minute after goalkeeper Hugo Lloris made a save on Lautaro Martínez and the rebound which had bounced scathingly close to the goalpost, was pushed inside by the thighs of an ultra-alert Messi, giving him his seventh goal of the tournament. Jules Koundé, along with the ball, had slipped into the goal to haul the ball out but by then it had gone way beyond the goal line. The effort had gone all futile. Messi was flocked by his teammates, a celebration so joyous and vivid that it looked as if the World Cup was completely in their pocket. It was a mistake they did, as a certain Mbappé looked on in the wake.</p>
+    <p class="ap">It had seemed now nothing could stop Messi and Argentina to finally quill down themselves as the eternal triumphants. But Messi's heir apparent, Mbappé, his ally at their common French club, Paris Saint-Germain, couldn't be thwarted at all as a desperate bid to outwit their opponents concluded in a handball by Gonzalo Montiel — the very same who blasted Argentina to the title on what was the final Penalty kick of the match — just inside the box. The referee awarded the third penalty of the game. And no second guesses as it was again Mbappé who was served the honour to emulsify greatness at such a tender age of 23.</p>
+    <p class="ap">So France came back in the contest, Mbappé making it 2-2 from 2-0 and now 3-3 from 3-2. He not only needed to score to equalise twice in the game but also become the only second man to score a World Cup final hat-trick, second after Geoff Hurst in 1966. Mbappé brought out his signature celebration, as Messi looked on, now utterly shattered by yet another denouncement of yet another effort he had so difficultly procured.</p>
+    <p class="ap">Mbappé looked on Cloud Nine, but tonight, unlike Hurst's case, it wasn't going to be enough. The three minutes left in the game now went as lonely as it had begun, with Messi winning a touch and Lautaro Martínez firing a shot off target. And so the referee signalled the end of extra time, with Messi visibly shaken, trudging off the pitch, reaching the conclusion his quest had now come down to a Penalty Shootout.</p>
+    <span class="stars">★ ★ ★</span>
+  </div>
+
+  <!-- PENALTIES -->
+  <div class="sec-head reveal" id="penalties"><hr/><span class="sec-lbl">✦ The Penalty Shootout</span><hr/></div>
+
+  <div class="pen-sec reveal">
+    <div class="pen-ttl">Penalty Shootout — Argentina 4 · France 2</div>
+    <div class="pen-grid">
+      <div class="pk arg"><span>Messi</span><div class="kd s">✓</div></div>
+      <div class="ps">1 – 0</div>
+      <div class="pk fra"><div class="kd m">✗</div><span>Coman (saved)</span></div>
+
+      <div class="pk arg"><span>Dybala</span><div class="kd s">✓</div></div>
+      <div class="ps">2 – 0</div>
+      <div class="pk fra"><div class="kd m">✗</div><span>Tchouaméni (wide)</span></div>
+
+      <div class="pk arg"><span>Paredes</span><div class="kd s">✓</div></div>
+      <div class="ps">3 – 1</div>
+      <div class="pk fra"><div class="kd s">✓</div><span>Kolo Muani</span></div>
+
+      <div class="pk arg"><span>Montiel ⭐</span><div class="kd w">★</div></div>
+      <div class="ps" style="color:var(--gold);font-weight:700">4 – 2 🏆</div>
+      <div class="pk fra" style="opacity:.22"><div class="kd m">—</div><span>—</span></div>
+
+      <div class="pf">🇦🇷 Argentina — FIFA World Champions 2022 🏆</div>
+    </div>
+  </div>
+
+  <div class="cols reveal">
+    <p class="ap dc">At the 2016 Copa América final against Chile, Messi had lost it having missed his team's first penalty and it led a shame in what was a traumatic defeat. In enormous trauma, he had called out his Argentina career. It was of course a quick decision with plenty of naiveness, and so it dawned that he reversed his decision after understanding the mistake he had made; perhaps he owed his countrymen more than just bowing out without any major title. And now here was he, at Lusail, chasing history.</p>
+    <p class="ap">Having taken the inaugural penalty against the Netherlands, he decided to go first again. It had worked against Dutch, it had to do so here too. At all costs. It might be Argentina's first penalty, but in reality, it was going to be Messi's final shot in the World Cup. Ever. This time he takes a longer run-up, stuttering in middle, taking his time, and waits for Lloris to commit himself. But in what was too good a shot, bubbling in confidence and dense frames, Lloris could not get to it any way.</p>
+    <p class="ap">Argentina are level. Messi walks back to the halfway line, his final treatise in the World Cup now done. As it turned out, the penalty kicks didn't turn out to be as humdinger as the open game had promised. Out came Kingsley Coman with pro-Argentinian vibes circling the enormous stadium, and sure enough, the pressure took to him, as he missed and Emiliano Martínez, diving the correct side, pulled off a spectacular save, personified by a jovial cherishment by those wearing the blue-white apparel. Messi waited on, as Argentina was still tied on 1-all but the tables which had gained momentum on the Argentine side, was now turning claustrophobically.</p>
+    <p class="ap">The times in the obvious reckoning indicated more relief than joy and yet, the moment needed a still conclusion. Aurélien Tchouaméni missed the next kick in perhaps the biggest brain fade of the game, and had stark similarities to the skier English captain Harry Kane shot away which had ultimately eliminated England in the Quarter Finals clash against France. Coming down, the right footer missed the left pole by a foot and joy erupted vividly.</p>
+    <p class="ap">Argentinians were spot on with their penalty kicks as France trailed 3-1, having missed a couple of shots. Now out came Kola Muani, pressure reaching breaking point. If Muani missed, the World Cup was Argentina's. But Muani fired in a terrific high shot past the dodged Martínez and the end was now coming clear.</p>
+    <p class="ap">Now all Argentina cared was Gonzalo Montiel to slot it home. The time ticked on, the pressure still at breakneck high. Messi looked on, the hands on his waist, the eyes dropping, the shoulders still holding high and drilled. And Montiel, with the kind of air of a veteran, discounting his age now seemed a misconception — the lad is 23 — slotted it in the extreme left corner, and the moment the shot went beyond the white line which had at moments proved both a blessing and a curse, now coming to unfathomable rescue.</p>
+    <p class="ap">But the eyes didn't travel long to find the man who craved for this epitaxy of such iterative proportions. Messi was down on his knees, the hands leapt up pointing to the skies and the eyes full of crimson tears. He didn't blast away in any ethereal marathon or any uncontrollable euphoria, rather the face showed an extraordinary soberness and tranquil hope and anticipation which finally, after five frequent eloquences, was quenched in his finest hour.</p>
+    <p class="ap">Paulo Dybala and Leandro Paredes convert their next two penalties as Emiliano Martínez saves the second and third French kicks from Kingsley Coman and Aurélien Tchouaméni. Montiel heads for his team's final penalty, if he scores the cup goes back to South America after twenty years. Montiel nails the shot. Messi nails his celebration. The Quest is over. The wait is over. It's time for euphoria.</p>
+  </div>
+
+  <!-- AFTERMATH -->
+  <div class="sec-head reveal" id="aftermath"><hr/><span class="sec-lbl">✦ Aftermath — Scenes at Lusail &amp; the Celebration</span><hr/></div>
+
+  <div class="cols reveal">
+    <p class="ap dc">The moment Referee blows the whistle, exhaustion and sorrow seep out in varied ideology, as Messi meets all of his teammates and every member of the coaching staff, as hugs and pats rained on his back. The euphoria erupting just after, was absolutely pummelling to describe in words. The Argentine displayed a variety of vindication of joy, some collapsing to the pitch, others running endlessly, leaving their allies in their midst, others like Messi, could only manage a dearth of laughter, although the dominating emotion was that of relief, emphatic joy and blindingly heavy tears, rolling down his cheek and reaching the end of the last wisps of his beard.</p>
+    <p class="ap">Lusail was bathed in joy, euphoria, exhilaration, automotive joy, tears while it tried to dwarf the soreness, sorrow, grief, exasperation and what not. The stark reality was truly on a magnificent note pulling away the spell it had conjured for more than 150 minutes on a warm and perfect night, and as it waved aside the curtains of joy and grief, for Messi and his men, it felt quite the same.</p>
+    <span class="stars">★ ★ ★</span>
+    <p class="ap">At last when the senses seemed come to him, blasting him to heavens, as he got to his feet, the fact that he was now a World champion was equally satisfying and shockingly exasperating now that he had fought for more than two hours non-stop. He needed to comprehend. And the next few seconds, the understanding now came to him as he got up, and the final few moments on Qatar's Stadium turf beckoned. He hugged all of his team members, the complete support staff and waved to his family in the stands.</p>
+    <p class="ap">The image of Diego Maradona, hoisted on the shoulders of his men, in the 1986 Mexican World Cup seemed eccentrically fluorescent, and whether it matched the similar hoisting of Messi in the aftermath of the Montiel penalty, were of a personal subjectivity. Although he and his mates basked in the glory unperturbed by anything and yet remaining all in golden spotlight.</p>
+    <p class="ap">The medal ceremony succeeded the special mentions — Golden Gloves, Golden Boot, Golden Ball and Emerging Player Award — as Messi finally, after years of struggle and incandescent eons, got to touch and flask the ultimate enchanting glory. And then the moment he craved the most arrived even as the Emir of Qatar, Tamim Bin Hamad Al Thani, put on the Traditional 'Bisht' on Messi just as the crowning glory beckoned clear and bright. Nothing could now separate the one good prize he had desired most above others. All of it childishness, maniac turbo charged celebration, ingress valiancy all burst out in sudden whim when he, jumping up and down like a child who has just won his favourite candy, as the whole Lusail and billions across the world beheld the whole scene with open eyes.</p>
+    <p class="ap">Messi's autonomous approach to this sport might have inducted him amongst the greatest, but to think he is the greatest amongst the greatest does him disservice. He might be lost in future by someone more energetic, disseminated knight who might strike more goals, send down more penalties, manufacture jaw-dropping passes with epic ease, or even herald his team with much greater relentness and quintessence whim, but as of now, he will remain Messi. Just Messi. The man, who in his 36th year, won the ultimate prize. The man who led his team away past greatest debacle, led out from the abyss or even lapped up any odds against himself.</p>
+    <p class="ap">Messi's career has been one stuff dreams are made of, but surely this wasn't his best performance. Or at least as it turns out, the majority of the winning performances in the final hurdle never ought to rank amongst the best just as with Messi, even though he never appeared low on confidence. And now having captured the biggest trophy, his career has entered its twilight, tonight's performance being one which has surely cast its charm and wizardry over rest of Argentina's team effort. Only that in later years, would we wish for the wizard Messi to forge his wand and cast that charm which took us in for too long. Perhaps once more if not forever.</p>
+    <p class="ap">Tonight's final might be remembered as the one where Messi struck twice, and not where someone Angel Di María had an equally important hand in two goals, or Emiliano Martínez's brilliant saves, or Mbappé's hat-trick. This will forever invoke Messi's greatness, even as it takes a hell of an effort to even come closer, and as Messi walked the tunnel one last time in his World Cup career, only five words could ever mingle with the brain:</p>
+  </div>
+
+  <div class="pq reveal">
+    <p class="pq-t" style="font-size:clamp(1.5rem,4vw,2.8rem)">Finally His Odyssey Is Over!</p>
+    <cite class="pq-c">— The Daily Prophet · 18 December 2022 · Lusail Iconic Stadium</cite>
+  </div>
+
+  <!-- PLAYERS -->
+  <div class="sec-head reveal" id="players"><hr/><span class="sec-lbl">✦ Player Spotlights</span><hr/></div>
+
+  <div class="sp-grid reveal">
+    <div class="sp-card arg">
+      <div class="sp-num">10</div>
+      <div class="sp-tag">🇦🇷 Argentina · Golden Ball Winner · World Champion</div>
+      <div class="sp-name">Lionel Messi</div>
+      <div class="sp-stats">
+        <div class="ss"><div class="ssn">7</div><div class="ssl">Tournament Goals</div></div>
+        <div class="ss"><div class="ssn">2</div><div class="ssl">Final Goals</div></div>
+        <div class="ss"><div class="ssn">5×</div><div class="ssl">World Cups</div></div>
+        <div class="ss"><div class="ssn">36</div><div class="ssl">Age</div></div>
+      </div>
+      <p class="sp-body">At 35, Messi proved he was mortal, but never did time catch on with him. He had proved there was still some unfinished business in his occupational treaty. After 12 years of jeopardised matchups and shredded schedules, after suffering a shocking defeat to Saudi Arabia in the group stage, Messi led his team all the way. A penalty in the 21st minute. The decisive shootout kick. The 107th-minute rebound that made it 3-2 before Mbappé's extraordinary equaliser. He walked the final World Cup dance of a celebrated career with the calm authority of a man who simply knew his time had arrived.</p>
+    </div>
+    <div class="sp-card fra">
+      <div class="sp-num">10</div>
+      <div class="sp-tag">🇫🇷 France · Golden Boot · Runner-Up</div>
+      <div class="sp-name">Kylian Mbappé</div>
+      <div class="sp-stats">
+        <div class="ss"><div class="ssn">8</div><div class="ssl">Tournament Goals</div></div>
+        <div class="ss"><div class="ssn">3</div><div class="ssl">Final Goals</div></div>
+        <div class="ss"><div class="ssn">23</div><div class="ssl">Age</div></div>
+        <div class="ss"><div class="ssn">2×</div><div class="ssl">Finals</div></div>
+      </div>
+      <p class="sp-body">In all 22 World Cup finals, only one man had ever scored a hat-trick — Geoff Hurst in 1966. And he won. Mbappé's hat-trick was not enough, yet it remains one of the most astonishing individual performances in football history. From nowhere — from a team invisible for 80 minutes — Mbappé single-handedly dragged France level, not once but twice. Eccentric, shrewd and understandably twitchy, he holds way for his team aptly. His World Cup crown still awaits.</p>
+    </div>
+  </div>
+
+  <div class="rule-dbl reveal"></div>
+
+  <div class="sp-grid reveal">
+    <div class="sp-card gold">
+      <div class="sp-tag">🇦🇷 Argentina · Golden Gloves</div>
+      <div class="sp-name">Emiliano Martínez</div>
+      <div class="sp-stats">
+        <div class="ss"><div class="ssn">2</div><div class="ssl">Shootout Saves</div></div>
+        <div class="ss"><div class="ssn">3</div><div class="ssl">Pens Faced</div></div>
+      </div>
+      <p class="sp-body">The goalkeeper who felt the heat of a winter Qatari night alongside Hugo Lloris — and came out on the right side. Diving the correct side to deny Kingsley Coman and saving Tchouaméni's kick, Martínez was every bit as instrumental as the man wearing the number 10 shirt. His heroics personified by jovial cherishment from those wearing the blue-white apparel across the stadium and the world.</p>
+    </div>
+    <div class="sp-card gold">
+      <div class="sp-tag">🇦🇷 Argentina · Emerging Player Award</div>
+      <div class="sp-name">Enzo Fernández</div>
+      <div class="sp-stats">
+        <div class="ss"><div class="ssn">21</div><div class="ssl">Age</div></div>
+        <div class="ss"><div class="ssn">🌟</div><div class="ssl">Best Young Player</div></div>
+      </div>
+      <p class="sp-body">The young midfield architect whose vision set up opportunities throughout the tournament. On eight minutes, receiving possession from Fernández, Messi played a lovely ball through the middle for Mac Allister to run onto — the kind of moment that defined Argentina's fluid, dominant football. The emerging player award was richly deserved for a 21-year-old who looked entirely unawed by the grandest stage in football.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="close-blk reveal">
+  <div class="close-txt">Finally His Odyssey Is Over!</div>
+  <div class="close-sub">🇦🇷 Argentina · FIFA World Champions 2022 · Lusail Stadium, Doha<br/>Argentina 3–3 France (4–2 on Penalties) · 18 December 2022</div>
+</div>
+
+<footer>
+  <div class="f-logo">The Daily Prophet</div>
+  <p>WHERE FREEDOM PREVAILS EVEN IN DARKNESS</p>
+  <p style="margin-top:.7rem">Special World Cup Edition · 19 December 2022 · Monday · Price €2.80 · 40 + 4 Pages</p>
+  <p>London · Birmingham · Cardiff · Manchester · Southampton · Nottingham · Norfolk · Chester Le Street · Northampton</p>
+  <p style="margin-top:1rem;font-size:.57rem;color:#252018">
+    Match report by Muhammad Hamza at the Lusail Iconic Stadium, Doha &amp; Elizabeth Roland-Smith [Live Updates], Doha.<br/>
+    Chief Sports Writer and Football Correspondent · Published 18 December 2022, 18:32 GMT.<br/>
+    All content reproduced from the original printed edition. All rights reserved © The Daily Prophet 2022.
+  </p>
+</footer>
+
+<script>
+// Progress bar + back-to-top
+window.addEventListener('scroll',()=>{
+  const st=document.documentElement.scrollTop;
+  const sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('progress-bar').style.width=(st/sh*100)+'%';
+  const b=document.getElementById('btt');
+  st>500?b.classList.add('vis'):b.classList.remove('vis');
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Dark/light mode
+const btn=document.getElementById('themeBtn');
+const icon=document.getElementById('ticon');
+const lbl=document.getElementById('tlbl');
+let dark=localStorage.getItem('theme')==='dark';
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  icon.textContent=dark?'☀️':'🌙';
+  lbl.textContent=dark?'Light':'Dark';
+}
+applyTheme();
+btn.addEventListener('click',()=>{dark=!dark;localStorage.setItem('theme',dark?'dark':'light');applyTheme()});
+</script>
+</body>
+</html>
